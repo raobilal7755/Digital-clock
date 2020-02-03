@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		function showTime()
+		{
+			var a_p=""; // this is variable use for AM and PM time we use this variable in the below.
+			var today=new Date(); // this is date object...
+			current_hour=today.getHours(); // this function use for get hours in the date object...
+			current_minutes=today.getMinutes();
+			current_second=today.getSeconds();
+               // now we apply conditon in the am and pm using span tag
+			if(current_hour<12){
+				a_p="<span>AM</span>";
+			}
+			else{
+                a_p="<span>PM</span>";
+			}
+			// this says that normal time are 23:00 format now we change this in the form of 1:00
+			if(current_hour==0){
+				current_hour=12;
+			}
+			// converstion above...
+			if(current_hour>12){
+				current_hour=current_hour-12;
+			}
+             // apply checktime function on three ... addtion of zero...
+			current_hour=checkTime(current_hour);
+			current_minutes=checkTime(current_minutes);
+			current_second=checkTime(current_second);
+            // this is  a final input...
+			document.getElementById('clocklarge').innerHTML=current_hour+" : "+current_minutes+" : "+ current_second+"  "+a_p;
+		}
+         // now we create function using adding the zero....
+		function checkTime(i){
+			if(i<10){
+				i="0"+i;
+			}
+			return(i);
+		}
+
+		setInterval(showTime)
+	</script>
+</head>
+<body>
+	<div id="clockdate">
+		<div id="wraper-clockdate">
+			 <div id="clocklarge"></div>
+		</div>
+	</div>
+</body>
+</html>

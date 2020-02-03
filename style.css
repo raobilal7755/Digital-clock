@@ -1,0 +1,27 @@
+body{
+	background-color: gray;
+}
+#clockdate{
+	width: 47%;
+	margin:auto;
+	background-color: #3F3737;
+	border-radius: 10px;
+	padding: 10px;
+	margin-top: 15%;
+}
+#wraper-clockdate{
+	padding: 25px;
+    
+}
+#clocklarge{
+	font-size: 80px;
+	color: white;
+	font-family: arial;
+}
+#clocklarge span{
+	color: #7F7F7F;
+	font-size: 30px;
+	position: relative;
+	top: -27px;
+
+}
